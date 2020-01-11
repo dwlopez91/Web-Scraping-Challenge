@@ -13,21 +13,36 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
-  
+    
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
+    </div>
+
     <h2>Find out more about the red planet.</h2>
 
-    <h2>Featured Mars Image</h2>
-    <img src="{{ vacation.featured_image_url }}" alt="featured_image">
+    <div class="card bg-dark text-white">
+      <h3 class="card-title">Mars Featured Image</h3>        
+      <img src="{{ vacation.featured_image_url }}" class="card-img" alt="...">
+      <div class="card-img-overlay">
+      </div>
+    </div>
     
-    {{ vacation.html_table | safe }}
+    <div>
+      <h5>Mars Data</h5>
+      {{ vacation.html_table | safe }}
+    </div>
+    
     <br>
-
-    <p>"{{vacation.mars_weather_tweet}}"</p>
-
-  </div>
-  </div>
+    <div class="card" style="width: 22rem;">
+      <div class="card-body">
+        <h5 class="card-title">Mars Weather Tweet</h5>
+        <p class="card-text">"{{vacation.mars_weather_tweet}}"</p>
+      </div>
+    </div>
+    <br>
+    <div>
+      {{ vacation.hemisphere_image_urls | safe }}
+    </div>
 </body>
 
 </html>

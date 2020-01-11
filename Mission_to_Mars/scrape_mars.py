@@ -98,5 +98,8 @@ def scrape_data():
 
     #adding mars weather tweet text to dictionary
     output['mars_weather_tweet'] = mars_weather_tweet
-
+    
+    
+    browser.quit()
     return output
+
